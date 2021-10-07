@@ -6,7 +6,7 @@ library(ggplot2)
 library(readr)
 
 #data
-climate <- read.csv(file.chosse())
+climate <- read.csv(choose.files())
 
 # if you need a specific order on the x axis create an object.
 order <- c("jul/17", "aug/17", "sep/17", "oct/17", "nov/17", "dec/17", "jan/18", "feb/18", "mar/18", "apr/18", "may/18", "jun/18")

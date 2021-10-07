@@ -2,7 +2,8 @@
 
 
 # read data
-data <- read.csv(file.choose(), sep = ",")
+data <- read.csv(choose.files(), sep = ",")
+
 
 # autoscaling
 ## package mdatools - install only the first time to use
