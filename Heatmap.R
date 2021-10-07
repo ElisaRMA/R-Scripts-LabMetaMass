@@ -1,12 +1,12 @@
-## HEATMAP
+## HEATMAP - use it with the 'example_heatmapdata.csv'
 
 
 # read data
-data <- read.csv("G:/2. LABMETAMASS/COLABORACOES/Bel/svr_Bel_FxG_months_ELISA.csv", sep = ",")
+data <- read.csv(file.choose(), sep = ",")
 
 # autoscaling
 ## package mdatools - install only the first time to use
-install.packages("mdatools") 
+install.packages("mdatools")
 library(mdatools)
 
 ## only numeric columns - excluded the label and the samples columns
@@ -44,7 +44,7 @@ datanormnames <- cbind(data["X"], data["label"], datanorm)
 #creates a df with the labels, so later we can substitute F... for month name
 month <- c("Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May")
 label <- c("F01", "F02", "F03", "F04", "F05", "F06", "F07", "F08", "F09", "F10", "F11", "F12")
-label <- cbind(label, month) 
+label <- cbind(label, month)
 
 #changes F... for the month names and brings it to the first column
 library(dplyr)
@@ -71,7 +71,7 @@ meses <- group_by(datanormlabeled2, datanormlabeled2$month)
 
 summarise(meses, a=mean(a)) #loop through all columns? try with one column first
 
-#loop throught letters columns dataframe 
+#loop throught letters columns dataframe
 
 for (i in 3:length(meses)){
    letters[1:24]<- summarise(meses, i = mean(i))
@@ -86,7 +86,7 @@ for(i in 1:length(splitted)) {
 
 
 for (i in F) {
-  
+
 }
 
 
@@ -96,11 +96,11 @@ f1 <- as.data.frame(splitted$F01)
 
 mean
 
-ggplot(heatmap, aes(x = label, y = features, fill = ))  + 
+ggplot(heatmap, aes(x = label, y = features, fill = ))  +
   geom_tile()
 
 
 "2E-Hexenal","α-Thujene","α-Pinene","Thuja-2,4 10-diene",
 "Sabinene","UF","1-Octen-3-ol","3-Octanone","Myrcene","3-Octanol","3Z-Hexenyl acetate",
 "δ-3-Carene","o-Cymene","UF1","Limonene","E-β-Ocimene","α-Ocimene","α-Cubebene","α-Copaene",
-"β-Bourbonene","β-Cubebene","E-Caryophyllene","Germacrene D","UF3" 
+"β-Bourbonene","β-Cubebene","E-Caryophyllene","Germacrene D","UF3"
