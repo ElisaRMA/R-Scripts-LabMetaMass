@@ -16,4 +16,4 @@ Metabolomics research usually starts with sample analysis using an LC-MS equipme
 - Correlation tests (in progress)
 - SVR Normalization (in progress)
 
-Note that these scripts contain detailed comments, as their use was also intended for members of the LabMetaMass research group with no experience in R language. 
+Notice that these scripts contain detailed comments, as their use was also intended for members of the LabMetaMass research group with no experience in R language. 
