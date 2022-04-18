@@ -42,7 +42,8 @@ datafiles # lists files names. Check if the correct files were found
 library(xcms)
 library(Rmpi)
 library(CAMERA)
-library (IPO)
+library(IPO)
+library(beepr) 
 
 ##-------------------- IPO ----------------------##
 
@@ -62,6 +63,7 @@ time.xcmsSet <- system.time({
                     plot = TRUE)
 })
 
+beep()
 resultPeakpicking$best_settings$result
 optimizedXcmsSetObject <- resultPeakpicking$best_settings$xset
 
@@ -81,6 +83,8 @@ retcorGroupParameters$mzwid <-
                        subdir = 'C:/...', #can be set no NULL
                        plot = TRUE)
   })
+
+beep()
 
 writeRScript(resultPeakpicking$best_settings$parameters,
              resultRetcorGroup$best_settings)
@@ -156,7 +160,7 @@ anIC <- groupCorr(anI, cor_eic_th=0.75)
 anFA <- findAdducts(anIC, polarity="positive") #change polarity accordingly
 
 write.csv(getPeaklist(anIC), file="Name.csv") # generates a table of features
-
+beep()
 
 
 
